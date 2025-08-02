@@ -1,4 +1,4 @@
-package my_practice.leet_code;
+package my_practice.leet_code.Array;
 
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {

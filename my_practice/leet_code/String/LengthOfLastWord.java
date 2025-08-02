@@ -1,4 +1,4 @@
-package my_practice.leet_code;
+package my_practice.leet_code.String;
 
 public class LengthOfLastWord {
     public int lengthOfLastWord(String s) {

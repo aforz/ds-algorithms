@@ -1,4 +1,4 @@
-package my_practice.leet_code;
+package my_practice.leet_code.Array;
 
 public class SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {

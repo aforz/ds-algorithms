@@ -1,4 +1,4 @@
-package my_practice.leet_code;
+package my_practice.leet_code.String;
 
 public class ReverseString {
     public static void reverseString(char[] s) {
