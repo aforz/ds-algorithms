@@ -1,4 +1,4 @@
-package my_practice.leet_code.Array;
+package my_practice.leet_code.recursion;
 
 // Definition for singly-linked list.
 class ListNode {
