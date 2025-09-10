@@ -1,4 +1,4 @@
-package my_practice.leet_code;
+package my_practice.leet_code.maths;
 
 public class ClimbingStairs {
     public int climbStairs(int n) {

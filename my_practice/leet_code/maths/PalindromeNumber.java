@@ -1,4 +1,4 @@
-package my_practice.leet_code;
+package my_practice.leet_code.maths;
 
 public class PalindromeNumber {
     public static boolean isPalindrome(int x) {
