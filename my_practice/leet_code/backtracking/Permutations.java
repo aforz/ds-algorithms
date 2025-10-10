@@ -3,6 +3,7 @@ package my_practice.leet_code.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
+// Problem: https://platform.bosscoderacademy.com/course/X0SLKWBDPUlLcC40nFe5/assignment/coding?problemId=permutations
 public class Permutations {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> results = new ArrayList<>();
@@ -30,9 +31,5 @@ public class Permutations {
         Permutations p = new Permutations();
         int[] nums1 = {1, 2, 3};
         System.out.println(p.permute(nums1));
-        int[] nums2 = {0, 1};
-        System.out.println(p.permute(nums2));
-        int[] nums3 = {1};
-        System.out.println(p.permute(nums3));
     }
 }
