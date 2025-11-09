@@ -1,35 +1,30 @@
 package my_practice.leet_code.searching;
 
-import java.math.BigInteger;
-
 public class SmallestGoodBase {
-    public String smallestGoodBase(String n_str) {
-        long n = Long.parseLong(n_str);
-        int max_m = (int) (Math.log(n + 1) / Math.log(2)); // maximum possible m
-
-        for (int m = max_m; m >= 2; m--) {
-            long left = 2, right = (long) Math.pow(n, 1.0 / m) + 1;
+    public String smallestGoodBase(String n) {
+        long num = Long.parseLong(n);
+        int max_m = (int) (Math.log(num) / Math.log(2));
+        for (int m = max_m; m >= 1; --m) {
+            long left = 2, right = (long) Math.pow(num, 1.0 / m) + 1;
             while (left <= right) {
                 long k = left + (right - left) / 2;
-                BigInteger sum = BigInteger.ONE;
-                BigInteger base = BigInteger.ONE;
-                for (int i = 0; i < m; i++) {
-                    base = base.multiply(BigInteger.valueOf(k));
-                    sum = sum.add(base);
+                long sum = 1, curr = 1;
+                for (int i = 1; i <= m; ++i) {
+                    curr *= k;
+                    sum += curr;
+                    if (sum > num) break;
                 }
-                BigInteger nBI = BigInteger.valueOf(n);
-                int cmp = sum.compareTo(nBI);
-                if (cmp == 0) return Long.toString(k);
-                else if (cmp < 0) left = k + 1;
+                if (sum == num) return Long.toString(k);
+                if (sum < num) left = k + 1;
                 else right = k - 1;
             }
         }
-        return Long.toString(n - 1);
+        return Long.toString(num - 1);
     }
 
     public static void main(String[] args) {
-        SmallestGoodBase sgb = new SmallestGoodBase();
-        System.out.println(sgb.smallestGoodBase("13"));    // Output: 3
-        System.out.println(sgb.smallestGoodBase("4681"));  // Output: 8
+        SmallestGoodBase solver = new SmallestGoodBase();
+        System.out.println(solver.smallestGoodBase("13"));    // Output: "3"
+        System.out.println(solver.smallestGoodBase("4681"));  // Output: "8"
     }
 }
